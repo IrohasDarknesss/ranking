@@ -1,0 +1,40 @@
+@keyframes rotateIn {
+    from {
+      transform: rotateX(-90deg);
+      opacity: 0;
+    }
+    to {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+  }
+  
+  .table-container {
+    max-width: 600px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    animation: rotateIn 0.5s ease-in-out;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
