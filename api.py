@@ -1,12 +1,14 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 import psycopg2
 
 app = Flask(__name__)
+CORS(app)
 
 # Connect PostgreSQL
 def get_db_connection():
     conn = psycopg2.connect(
-        dbname="ranking",
+        dbname="your_dbname",
         user="your_username",
         password="your_password",
         host="your_host",
@@ -27,4 +29,4 @@ def get_rankings():
     return jsonify([{'rank': rank, 'player_name': name, 'score': score} for rank, name, score in rankings])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
